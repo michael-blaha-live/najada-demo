@@ -10,7 +10,7 @@ class Service(metaclass=Singleton):
                 if serializer_class:
                     return serializer_class(func(*args, **kwargs))
                 return func(*args, **kwargs)
-    return serializer
+        return serializer
 
     # @serializer(Serializer)
     # def do_foo()

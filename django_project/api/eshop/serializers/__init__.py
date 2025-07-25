@@ -1,1 +1,1 @@
-from rest_framework import serializers
+from .dough_type import DoughTypeSerializer
