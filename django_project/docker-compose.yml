@@ -1,0 +1,45 @@
+services:
+  web_app_db:
+    restart: always
+    container_name: web-app-db
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_DB=${POSTGRES_NAME}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_LOCAL_PORT}:${POSTGRES_PORT}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  django_backend:
+    container_name: baguette-shop-backend
+    build:
+      context: . 
+      dockerfile: DockerFile
+    # entrypoint: /entrypoint.sh TODO fix 
+    command: bash -c "python manage.py runserver 0.0.0.0:${DJANGO_PORT}"
+    ports:
+      - "${DJANGO_PORT}:${DJANGO_PORT}"
+    volumes:
+      - .:/django_project
+    environment:
+      - POSTGRES_HOST=web_app_db
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_DB=${POSTGRES_NAME}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+    depends_on:
+      web_app_db:
+        condition: service_healthy
+    restart: on-failure
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:

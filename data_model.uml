@@ -1,0 +1,108 @@
+@startuml
+skinparam handwritten true
+skinparam ClassAttributeFontSize 14
+skinparam ClassFontSize 16
+skinparam titleFontSize 20
+
+title Baguette Shop Data Model
+
+entity MenuItem {
+  + id: Integer
+  + created_at: DateTime
+  + updated_at: DateTime  
+  + name: String
+  + base_price: Decimal
+  + is_available: Boolean
+  -- Relationships --
+  + ingredients: Many-to-Many to Ingredient
+}
+
+entity DoughType {
+  + id: Integer
+  + name: String
+  + extra_price: Decimal
+  + is_available: Boolean
+}
+
+entity Ingredient {
+  + id: Integer
+  + name: String
+  + is_available: Boolean
+  + stored_qty: Integer  (Internal, not exposed in API GET /ingredients)
+}
+
+entity Cart {
+  + id: Integer
+  + created_at: DateTime
+  + updated_at: DateTime  
+  + user_id: Integer (or Session Key)
+  + total_price: Decimal
+  + vat: Decimal
+  + wo_vat_price: Decimal
+  -- Relationships --
+  + items: One-to-Many to CartItem
+}
+
+entity CartItem {
+  + id: Integer
+  + created_at: DateTime
+  + updated_at: DateTime
+  + quantity: Integer
+  + note: String
+  + price: Decimal (Calculated)
+  -- Relationships --
+  + cart: Foreign Key to Cart
+  + menu_item_id: Integer (FK to MenuItem, implicitly)
+  + dough_type_id: Integer (FK to DoughType, implicitly)
+}
+
+entity PaymentType {
+  + id: Integer
+  + name: String
+}
+
+entity Order {
+  + id: Integer
+  + created_at: DateTime
+  + updated_at: DateTime  
+  + user_id: Integer (or Session Key)
+  + status: String (e.g., "Created", "Preparing Food", "Delivered")
+  + total_price: Decimal
+  + price_without_vat: Decimal
+  + vat_amount: Decimal
+  + created_at: DateTime
+  + updated_at: DateTime
+  -- Relationships --
+  + payment_type: Foreign Key to PaymentType
+  + items: One-to-Many to OrderItem
+}
+
+entity OrderItem {
+  + id: Integer
+  + created_at: DateTime
+  + updated_at: DateTime
+  + menu_item_name: String (Snapshot from MenuItem)
+  + dough_type_name: String (Snapshot from DoughType)
+  + quantity: Integer
+  + unit_price: Decimal (Snapshot)
+  + note: String
+  -- Relationships --
+  + order: Foreign Key to Order
+}
+
+
+' Relationships (assuming Django ORM style)
+MenuItem "1" -- "*" Ingredient : "has recipe of"
+Cart "1" -- "*" CartItem : "contains"
+Order "1" -- "*" OrderItem : "contains"
+CartItem -- MenuItem : "refers to"
+CartItem -- DoughType : "refers to"
+Order "1" -- "1" PaymentType : "uses"
+OrderItem -- MenuItem : "references"
+OrderItem -- DoughType : "references"
+Cart "1" -- "1" Order : "converted from"
+' Assuming User is an external or Django's built-in User model
+User "1" -- "1" Cart : "owns"
+User "1" -- "*" Order : "places"
+
+@enduml
