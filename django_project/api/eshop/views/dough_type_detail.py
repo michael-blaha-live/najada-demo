@@ -6,10 +6,11 @@ from rest_framework.permissions import AllowAny
 from api.eshop.serializers.dough_type import DoughTypeSerializer
 from api.eshop.services.dough_type import DoughTypeService
 
+
 class DoughTypeDetailAPIView(APIView):
     permission_classes = [AllowAny]
 
-    def get(self, request, pk, *args, **kwargs): # 'pk' will come from URLconf
+    def get(self, request, pk, *args, **kwargs):  # 'pk' will come from URLconf
         """
         GET /api/v1/dough-types/{pk}/
         Returns details of a specific dough type by delegating to DoughTypeService.

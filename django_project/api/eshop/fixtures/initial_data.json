@@ -1,0 +1,127 @@
+[
+    {
+      "model": "eshop_app.doughtype",
+      "pk": 1,
+      "fields": {
+        "name": "světlá",
+        "extra_price": "0.00",
+        "is_available": true
+      }
+    },
+    {
+      "model": "eshop_app.doughtype",
+      "pk": 2,
+      "fields": {
+        "name": "celozrnná",
+        "extra_price": "10.00",
+        "is_available": true
+      }
+    },
+    {
+      "model": "eshop_app.doughtype",
+      "pk": 3,
+      "fields": {
+        "name": "bezlepková",
+        "extra_price": "12.00",
+        "is_available": false
+      }
+    },
+    {
+      "model": "eshop_app.ingredient",
+      "pk": 1,
+      "fields": {
+        "name": "Šunka",
+        "_stored_qty": 10
+      }
+    },
+    {
+      "model": "eshop_app.ingredient",
+      "pk": 2,
+      "fields": {
+        "name": "Sýr Eidam",
+        "_stored_qty": 5
+      }
+    },
+    {
+      "model": "eshop_app.ingredient",
+      "pk": 3,
+      "fields": {
+        "name": "Rajče",
+        "_stored_qty": 20
+      }
+    },
+    {
+      "model": "eshop_app.ingredient",
+      "pk": 4,
+      "fields": {
+        "name": "Římský salát",
+        "_stored_qty": 15
+      }
+    },
+    {
+      "model": "eshop_app.ingredient",
+      "pk": 5,
+      "fields": {
+        "name": "Kuřecí maso",
+        "_stored_qty": 8
+      }
+    },
+    {
+      "model": "eshop_app.ingredient",
+      "pk": 6,
+      "fields": {
+        "name": "Parmazán",
+        "_stored_qty": 3
+      }
+    },
+    {
+      "model": "eshop_app.menuitem",
+      "pk": 1,
+      "fields": {
+        "name": "Cézar",
+        "base_price": "123.00",
+        "ingredients": [4, 5, 6]
+      }
+    },
+    {
+      "model": "eshop_app.menuitem",
+      "pk": 2,
+      "fields": {
+        "name": "Šunková",
+        "base_price": "234.00",
+        "ingredients": [1, 2, 3]
+      }
+    },
+    {
+      "model": "eshop_app.paymenttype",
+      "pk": 1,
+      "fields": {
+        "name": "cash"
+      }
+    },
+    {
+      "model": "eshop_app.paymenttype",
+      "pk": 2,
+      "fields": {
+        "name": "credit card"
+      }
+    },  
+    {
+      "model": "auth.user",
+      "pk": 1,
+      "fields": {
+        "password": "pbkdf2_sha256$260000$L4kFGZv0fSklZDlIriCrgb$cLnLGahzGlLum508BwQnUekoy81M1lwLAFNsML5+VZs=",
+        "last_login": null,
+        "is_superuser": false,
+      "username": "testuser",
+      "first_name": "",
+      "last_name": "",
+      "email": "testuser@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-07-26T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+      }
+      }
+  ]

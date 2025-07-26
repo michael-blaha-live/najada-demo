@@ -22,7 +22,7 @@ services:
     build:
       context: . 
       dockerfile: DockerFile
-    # entrypoint: /entrypoint.sh TODO fix 
+    entrypoint: /entrypoint.sh 
     command: bash -c "python manage.py runserver 0.0.0.0:${DJANGO_PORT}"
     ports:
       - "${DJANGO_PORT}:${DJANGO_PORT}"

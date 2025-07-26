@@ -6,6 +6,7 @@ from rest_framework.permissions import AllowAny
 from api.eshop.serializers.dough_type import DoughTypeSerializer
 from api.eshop.services.dough_type import DoughTypeService
 
+
 class DoughTypeListAPIView(APIView):
     permission_classes = [AllowAny]
 

@@ -1,12 +1,6 @@
 import pytest
 from rest_framework.test import APIClient
 
-@pytest.fixture
-def api_client():
-    """
-    Returns an APIClient instance for making HTTP requests in tests.
-    """
-    return APIClient()
 
 class TestGetHeartBeat:
     def test_get_heartbeat(self, api_client):
@@ -15,7 +9,7 @@ class TestGetHeartBeat:
         WHEN a GET request is made to /dough-types
         THEN the API should return an empty list with 200 OK status.
         """
-        response = api_client.get('/api/eshop/heartbeat')
+        response = api_client.get('/api/eshop/heartbeat/')
 
         assert response.status_code == 200
         assert response.json() == {'healthy': True}
