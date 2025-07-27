@@ -1,118 +1,203 @@
 [
-    {
-      "model": "eshop_app.doughtype",
-      "pk": 1,
-      "fields": {
-        "name": "světlá",
-        "extra_price": "0.00",
-        "is_available": true
-      }
-    },
-    {
-      "model": "eshop_app.doughtype",
-      "pk": 2,
-      "fields": {
-        "name": "celozrnná",
-        "extra_price": "10.00",
-        "is_available": true
-      }
-    },
-    {
-      "model": "eshop_app.doughtype",
-      "pk": 3,
-      "fields": {
-        "name": "bezlepková",
-        "extra_price": "12.00",
-        "is_available": false
-      }
-    },
-    {
-      "model": "eshop_app.ingredient",
-      "pk": 1,
-      "fields": {
-        "name": "Šunka",
-        "_stored_qty": 10
-      }
-    },
-    {
-      "model": "eshop_app.ingredient",
-      "pk": 2,
-      "fields": {
-        "name": "Sýr Eidam",
-        "_stored_qty": 5
-      }
-    },
-    {
-      "model": "eshop_app.ingredient",
-      "pk": 3,
-      "fields": {
-        "name": "Rajče",
-        "_stored_qty": 20
-      }
-    },
-    {
-      "model": "eshop_app.ingredient",
-      "pk": 4,
-      "fields": {
-        "name": "Římský salát",
-        "_stored_qty": 15
-      }
-    },
-    {
-      "model": "eshop_app.ingredient",
-      "pk": 5,
-      "fields": {
-        "name": "Kuřecí maso",
-        "_stored_qty": 8
-      }
-    },
-    {
-      "model": "eshop_app.ingredient",
-      "pk": 6,
-      "fields": {
-        "name": "Parmazán",
-        "_stored_qty": 3
-      }
-    },
-    {
-      "model": "eshop_app.menuitem",
-      "pk": 1,
-      "fields": {
-        "name": "Cézar",
-        "base_price": "123.00",
-        "ingredients": [4, 5, 6]
-      }
-    },
-    {
-      "model": "eshop_app.menuitem",
-      "pk": 2,
-      "fields": {
-        "name": "Šunková",
-        "base_price": "234.00",
-        "ingredients": [1, 2, 3]
-      }
-    },
-    {
-      "model": "eshop_app.paymenttype",
-      "pk": 1,
-      "fields": {
-        "name": "cash"
-      }
-    },
-    {
-      "model": "eshop_app.paymenttype",
-      "pk": 2,
-      "fields": {
-        "name": "credit card"
-      }
-    },  
-    {
-      "model": "auth.user",
-      "pk": 1,
-      "fields": {
-        "password": "pbkdf2_sha256$260000$L4kFGZv0fSklZDlIriCrgb$cLnLGahzGlLum508BwQnUekoy81M1lwLAFNsML5+VZs=",
-        "last_login": null,
-        "is_superuser": false,
+  {
+    "model": "eshop_app.doughtype",
+    "pk": 1,
+    "fields": {
+      "name": "světlá",
+      "extra_price": "0.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "eshop_app.doughtype",
+    "pk": 2,
+    "fields": {
+      "name": "celozrnná",
+      "extra_price": "10.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "eshop_app.doughtype",
+    "pk": 3,
+    "fields": {
+      "name": "bezlepková",
+      "extra_price": "12.00",
+      "is_available": false
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 1,
+    "fields": {
+      "name": "Šunka",
+      "_stored_qty": 10
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 2,
+    "fields": {
+      "name": "Sýr Eidam",
+      "_stored_qty": 5
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 3,
+    "fields": {
+      "name": "Rajče",
+      "_stored_qty": 20
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 4,
+    "fields": {
+      "name": "Římský salát",
+      "_stored_qty": 15
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 5,
+    "fields": {
+      "name": "Kuřecí maso",
+      "_stored_qty": 8
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 6,
+    "fields": {
+      "name": "Parmazán",
+      "_stored_qty": 3
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 7,
+    "fields": {
+      "name": "Máslo",
+      "_stored_qty": 25
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 8,
+    "fields": {
+      "name": "Vejce",
+      "_stored_qty": 12
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 9,
+    "fields": {
+      "name": "Tuňák",
+      "_stored_qty": 7
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 10,
+    "fields": {
+      "name": "Ananas",
+      "_stored_qty": 10
+    }
+  },
+  {
+    "model": "eshop_app.ingredient",
+    "pk": 11,
+    "fields": {
+      "name": "Kečup",
+      "_stored_qty": 18
+    }
+  },
+  {
+    "model": "eshop_app.menuitem",
+    "pk": 1,
+    "fields": {
+      "name": "Cézar",
+      "base_price": "123.00",
+      "ingredients": [4, 5, 6]
+    }
+  },
+  {
+    "model": "eshop_app.menuitem",
+    "pk": 2,
+    "fields": {
+      "name": "Šunková",
+      "base_price": "234.00",
+      "ingredients": [1, 2, 3]
+    }
+  },
+  {
+    "model": "eshop_app.menuitem",
+    "pk": 3,
+    "fields": {
+      "name": "Cézar (New)",
+      "base_price": "125.00",
+      "ingredients": [4, 5]
+    }
+  },
+  {
+    "model": "eshop_app.menuitem",
+    "pk": 4,
+    "fields": {
+      "name": "Šunková (New)",
+      "base_price": "230.00",
+      "ingredients": [1, 7]
+    }
+  },
+  {
+    "model": "eshop_app.menuitem",
+    "pk": 5,
+    "fields": {
+      "name": "Sýrová",
+      "base_price": "180.00",
+      "ingredients": [2, 7, 8]
+    }
+  },
+  {
+    "model": "eshop_app.menuitem",
+    "pk": 6,
+    "fields": {
+      "name": "Tuňáková",
+      "base_price": "195.00",
+      "ingredients": [9, 8]
+    }
+  },
+  {
+    "model": "eshop_app.menuitem",
+    "pk": 7,
+    "fields": {
+      "name": "Hawaii",
+      "base_price": "210.00",
+      "ingredients": [10, 11, 1]
+    }
+  },
+  {
+    "model": "eshop_app.paymenttype",
+    "pk": 1,
+    "fields": {
+      "name": "cash"
+    }
+  },
+  {
+    "model": "eshop_app.paymenttype",
+    "pk": 2,
+    "fields": {
+      "name": "credit card"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$L4kFGZv0fSklZDlIriCrgb$cLnLGahzGlLum508BwQnUekoy81M1lwLAFNsML5+VZs=",
+      "last_login": null,
+      "is_superuser": false,
       "username": "testuser",
       "first_name": "",
       "last_name": "",
@@ -122,6 +207,6 @@
       "date_joined": "2025-07-26T10:00:00Z",
       "groups": [],
       "user_permissions": []
-      }
-      }
-  ]
+    }
+  }
+]
