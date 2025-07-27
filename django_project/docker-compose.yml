@@ -2,7 +2,7 @@ services:
   web_app_db:
     restart: always
     container_name: web-app-db
-    image: postgres:13
+    image: postgres:14
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_DB=${POSTGRES_NAME}

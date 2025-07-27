@@ -44,7 +44,7 @@ A dedicated **Service Layer** has been implemented to separate business logic fr
 # 2 Development
 ## 2.1 Local development
 ### 2.1.1 Prerequisites
-* **PostgreSQL database** installed and running on your host machine.
+* **PostgreSQL database** installed and running on your host machine (version > 14).
 * **Python 3.10** or higher (compatible with Django 5.2.x).
 
 ### 2.1.2 DB Initialization
