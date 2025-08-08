@@ -1,5 +1,5 @@
-# Najada demo
-Demo project for Najada games.
+# Django bakery demo
+Django demo project implmenting several REST endpoints to provide flow for user to order some items on menu.
 
 # 1 Technical specification
 ## 1.1. Core Features (User Stories)
@@ -119,3 +119,4 @@ flake8 .
 
 ## 2.4 Logging
 Application logs are generated and stored in the specified file `/django_project/api.log`
+
